@@ -6,9 +6,9 @@ export function listenForm(){
   form.addEventListener("input",(event)=>{
     const target = event.target;
     if(target.name === 'email'){
-      console.log(`${target.value}`);
+      console.log(`Email: ${target.value}`);
     }else if(target.name==='message'){
-      console.log(`${target.value}`);
+      console.log(`Message: ${target.value}`);
     }
   });
 };
@@ -22,9 +22,12 @@ export function submitForm(){
     console.log(`Message: ${message}`);
     const objForm = {email:email,message:message}
     localStorage.setItem("feedback-form-state",JSON.stringify(objForm));
-
-
+    console.log(`local storage: ${localStorage.getItem("feedback-form-state")}`);
 
   });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    listenForm();
+    submitForm();
+  });
