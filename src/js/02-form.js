@@ -1,4 +1,4 @@
-import './css/styles.css';
+import '../css/styles.css';
 
 
 const form = document.querySelector("#feedback-form");
